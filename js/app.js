@@ -60,7 +60,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
 
 }]);
 
-notebird.run(function($ionicPlatform) {
+notebird.run(['$ionicPlatform','$localStorage','PushNotificationsService', function($ionicPlatform,$localStorage,PushNotificationsService) {
   
   $ionicPlatform.on("deviceready", function(){
     
@@ -76,7 +76,13 @@ notebird.run(function($ionicPlatform) {
   });
 
   $ionicPlatform.on("resume", function(){
-      
+    
+      var tagName = (typeof $localStorage.phone != 'undefined') ? $localStorage.phone : false;
+
+      if(tagName)
+      {
+        PushNotificationsService.register(tagName);
+      }
   });
 
-})
+}])
