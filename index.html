@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="notebird">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Notebird App</title>
+    
+    <!-- Styles here -->
+    <link rel="stylesheet" media="screen" href="plugins/ionic/css/ionic.min.css" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="css/app.css" type="text/css"/> 
+ 
+  </head>
+  
+  
+  <body>
+ 
+    <script type="text/javascript" src="plugins/ionic/ionic.bundle.min.js"></script> 
+    <script type="text/javascript" src="plugins/ng-storage.min.js"></script>
+    <script type="text/javascript" src="plugins/ng-group.js"></script>
+    <script type="text/javascript" src="plugins/angular-cookies.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <!-- App Constructor Starts here -->
+    <script type="text/javascript" src="js/app.js"></script> 
+    <script type="text/javascript" src="js/config.js"></script> 
+    <script type="text/javascript" src="js/services.js"></script> 
+
+    <!-- App Controllers Start Here -->
+    <script type="text/javascript" src="js/controllers/splash.js"></script>
+    <script type="text/javascript" src="js/controllers/signup.js"></script>
+    <script type="text/javascript" src="js/controllers/verify.js"></script>
+    <script type="text/javascript" src="js/controllers/dashboard.js"></script>
+    <script type="text/javascript" src="js/controllers/category.js"></script>
+    <script type="text/javascript" src="js/controllers/subscriber.js"></script>
+
+    <!-- For IOS Swipe juggling page error -->
+    <script type="text/javascript">
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+     
+    <ion-nav-view></ion-nav-view>
+
+  </body>
+ 
+</html>

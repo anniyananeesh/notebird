@@ -1,0 +1,33 @@
+<ion-view class="splashbg text-center">
+
+	<ion-header-bar align-title="center" class="bar-signup">
+ 
+		  <h1 class="title">Verify Mobile</h1>
+ 
+	</ion-header-bar>
+
+	<ion-content class="has-header">
+
+		<div class="verify-body">
+
+			<img src="images/chat-icon.png" class="mb-md" />
+			<div class="clearfix"></div>
+			<div class="verify-text">We send you a four digit <br/>verification code .<br/>Please verify your mobile</div>
+			<div class="clearfix"></div>
+
+			<form action="">
+
+				<input type="text" class="form-control-code" ng-model="user.code1" placeholder="*"/>
+				<input type="text" class="form-control-code" ng-model="user.code2" placeholder="*"/>
+				<input type="text" class="form-control-code" ng-model="user.code3" placeholder="*"/>
+				<input type="text" class="form-control-code" ng-model="user.code4" placeholder="*"/>
+				<div class="clearfix"></div>
+				<button type="button" class="btn-verify" ng-click="verifySMS()">Verfiy</button>
+
+			</form>
+
+		</div>
+
+	</ion-content>
+
+</ion-view>

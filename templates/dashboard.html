@@ -1,0 +1,34 @@
+<ion-header-bar align-title="center" class="bar-signup">
+ 
+  <h1 class="title">Dashboard</h1>
+ 
+</ion-header-bar>
+
+<ion-content>
+	
+ <div class="list list-inset">
+	<input type="search" ng-model="user.search" placeholder="Search for users ..." class="search-input"/>
+ </div>
+
+
+ <fieldset ng-repeat="placePeople in subscribers | orderBy:['category', 'name'] | groupBy:'category':'peopleByHome' | orderBy:'-items.length'">
+   
+   <legend>{{placePeople.category}}</legend>
+
+     <div class="subscribers">
+
+       <div class="subscriber-thumb" ng-repeat="person in placePeople.items" ng-click="followSubscriber($event, person.ref)" id="{{person.ref}}">
+          <span class="chosen" ng-if="hasFav(person.ref)"></span>
+          <img ng-src="http://localhost/360notes/uploads/subscribers/thumbs/{{person.image}}" ng-if="person.image != null" width="62" height="62" />
+       </div> 
+
+     </div>
+
+ </fieldset>
+ 
+</ion-content>
+
+<ion-footer-bar align-title="left" class="bar-signup">
+ 	<button class="find-more-btn" ng-click="showCategories()">Find More</button>
+</ion-footer-bar>
+

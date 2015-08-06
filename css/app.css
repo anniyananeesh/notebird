@@ -1,0 +1,321 @@
+.splashbg{
+	background: #00b8d1;
+}
+
+.bar.bar-signup{
+	background: #00b8d1;
+	color: #fff;
+}.bar.bar-signup .title{
+	color: #fff;
+}
+
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+
+.text-right{
+	text-align: right;
+}
+
+body{
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+}
+
+.app-logo{
+	display: inline-block;
+	position: relative;
+	width: 123px;
+	height: 135px;
+	background: url('../images/app-logo.png') no-repeat;
+	margin-top: 80px;
+}
+
+.welcome-text{
+	display: inline-block;
+	position: relative;
+	width: 169px;
+	height: 83px;
+	background: url('../images/app-welcome.png') no-repeat;
+	margin-top: 15px;
+}
+
+.signin-splash-btn{
+	margin-top: 30px;
+}
+
+.btn-hollow-white-rounded{
+	display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    min-height: 50px;
+    font-size: 18px;
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 30px;
+    background: transparent;
+    padding: 0px 35px;
+}
+
+.verify-body{
+	width: 70%;
+	display: inline-block;
+	position: relative;
+}
+
+.verify-text{
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	line-height: 25px;
+}
+
+.signup-header{
+	top:80px;
+}
+
+.form-control-verify{
+	background: transparent;
+	padding: 10px 20px;
+	min-height: 35px;
+	border-bottom: #fff solid 1px !important;
+	display: inline-block;
+	position: relative;
+	margin:0 auto;
+	color: #fff !important;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.form-control-verify::-webkit-input-placeholder {
+   color: #fff;
+}
+
+.form-control-verify:-moz-placeholder { /* Firefox 18- */
+   color: #fff;  
+}
+
+.form-control-verify::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;  
+}
+
+.form-control-verify:-ms-input-placeholder {  
+   color: #fff;  
+}
+
+.btn-verify{
+	display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    font-size: 18px;
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 5px;
+    background: transparent;
+    padding: 0px 35px;
+    margin-top: 30px;
+}
+
+.form-control-code{
+	background: transparent;
+	min-height: 50px;
+	border: #fff solid 1px !important;
+	display: inline-block !important;
+	position: relative;
+	margin:0 auto;
+	color: #fff !important;
+	border-radius: 25px;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	width: 50px;
+	margin-top: 30px;
+}
+
+.form-control-code::-webkit-input-placeholder {
+   color: #fff;
+   font-size: 45px;
+   padding-top: 6px;
+}
+
+.form-control-code:-moz-placeholder { /* Firefox 18- */
+   color: #fff;  
+   font-size: 45px;
+   padding-top: 6px;
+}
+
+.form-control-code::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff; 
+   font-size: 45px; 
+   padding-top: 6px;
+}
+
+.form-control-code:-ms-input-placeholder {  
+   color: #fff; 
+   font-size: 45px; 
+   padding-top: 6px;
+}
+
+.mb-md{
+	margin-bottom: 20px;
+}
+
+.search-input{
+	display: inline-block;
+	background: #f9fdfe !important;
+	border-radius: 20px !important;
+	border:#f3fbfd solid 1px !important;
+	padding-left: 50px !important;
+	padding-right: 50px !important;
+	width:100%;
+}
+
+.item h2{
+	color: #4c4c4c;
+}
+
+.btn-hollow-blu{
+	display: inline-block;
+	position: relative;
+	width: auto;
+	height: auto;
+	min-height: 20px;
+	color: #00b8d1;
+	border: #00b8d1 solid 1px;
+	border-radius: 20px;
+	background: transparent;
+	padding: 5px 15px;
+}
+.follow-btn, .follow-btn-following{
+	margin-top:5px;
+}
+
+.follow-btn-following{
+	background: #00b8d1;
+	color: #fff;
+}
+.item{
+	border-color: #f7f7f7;
+}
+.item.item-avatar img{
+	width: 62px;
+    height: 62px;
+    max-width: 62px;
+    max-height: 62px;
+}
+
+.item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content{
+	padding-left: 95px;
+}
+
+.find-more-btn{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background: #00b8d1;
+	color: #fff;
+	font-size: 16px;
+	border:none;
+}
+
+fieldset{
+	display: inline-block;
+	position: relative;
+	width: 98%;
+	height: auto;
+	border:#00b8d1 solid 1px;
+	border-radius: 5px;
+}
+fieldset legend{
+	font-size: 15px;
+	color: #00b8d1;
+	border:none;
+	width: auto;
+	height: auto;
+	background: #fff;
+	padding: 5px 8px;
+}
+
+.subscribers{
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	padding: 0px 5px 15px 5px;
+}
+
+.subscriber-thumb{
+	background: #f5f5f5;
+	display: inline-block;
+	position: relative;
+	width: 62px;
+	height: 62px;
+	border-radius: 30px; 
+	float: left;
+	margin-right: 8px;
+	margin-bottom: 10px;
+}
+
+.subscriber-thumb img{
+	width: 62px;
+	height: 62px;
+	border-radius: 30px;
+}
+
+.subscriber-thumb .chosen{
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: url('../images/subscriber-tick.png') no-repeat;
+	width: 19px;
+	height: 19px;
+}
+.category .item{
+	padding: 10px;
+	font-size: 13px;
+}
+
+
+.animate-enter, 
+.animate-leave { 
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+} 
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+    -webkit-transform: rotateX(-180deg) translatez(30px);
+    -moz-transform: rotateX(-180deg) translatez(30px);
+    -ms-transform: rotateX(-180deg) translatez(30px);
+    -o-transform: rotateX(-180deg) translatez(30px);
+    transform: rotateX(-180deg) translatez(30px);
+    opacity: 0;
+    height: 0px;
+}        
+
+.animate-enter.animate-enter-active,
+.animate-leave {
+    -webkit-transform: rotateX(0deg) translatez(30px);
+    -moz-transform: rotateX(0deg) translatez(30px);
+    -ms-transform: rotateX(0deg) translatez(30px);
+    -o-transform: rotateX(0deg) translatez(30px);
+    transform: rotateX(0deg) translatez(30px);
+    opacity: 1;
+    height: 30px;
+}
