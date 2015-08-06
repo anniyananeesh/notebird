@@ -1,6 +1,12 @@
-notebird.controller('DashboardCtrl',['$scope','$localStorage','Data','Auth','$state',function($scope,$localStorage,Data,Auth,$state){
+notebird.controller('DashboardCtrl',['$scope','$localStorage','Data','Auth','$state','PushNotificationsService',function($scope,$localStorage,Data,Auth,$state,PushNotificationsService){
 
-	//PushNotificationsService.register($localStorage.phone);
+    var tagName = (typeof $localStorage.phone != 'undefined') ? $localStorage.phone : false;
+   	console.log(tagName);
+   	if(tagName)
+    {
+        PushNotificationsService.register(tagName);
+    }
+
 	$scope.user = {
 		search: ''
 	}
