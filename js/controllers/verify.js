@@ -31,6 +31,8 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 			if(parseInt(userFullCode) === parseInt(code))
 			{
 				$localStorage.verified = true;
+
+				alert($localStorage.phone);
 				Auth.setUser({
 					phone: $localStorage.phone
 				});

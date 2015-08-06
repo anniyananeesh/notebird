@@ -10,19 +10,34 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
   	.state('splash', {
       	url: '/',
       	templateUrl: 'templates/splash.html',
-  		controller: 'SplashCtrl'
+  		  controller: 'SplashCtrl',
+        onEnter: function($state, Auth){
+          if(!Auth.isLoggedIn()){
+             $state.go('dashboard');
+          }
+        }
 	})
 
 	.state('signup', {
       	url: '/signup',
       	templateUrl: 'templates/signup.html',
-  		controller: 'SignupCtrl'
+  		controller: 'SignupCtrl',
+      onEnter: function($state, Auth){
+          if(!Auth.isLoggedIn()){
+             $state.go('dashboard');
+          }
+        }
 	})
 
 	.state('verify', {
       	url: '/verify',
       	templateUrl: 'templates/verify.html',
-  		controller: 'VerifyController'
+  		controller: 'VerifyController',
+      onEnter: function($state, Auth){
+          if(!Auth.isLoggedIn()){
+             $state.go('dashboard');
+          }
+        }
 	})
   .state('subscribers', {
         url: '/subscribers/:catId',
@@ -43,4 +58,25 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
 
     $urlRouterProvider.otherwise('/');
 
-}])
+}]);
+
+notebird.run(function($ionicPlatform) {
+  
+  $ionicPlatform.on("deviceready", function(){
+    
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+ 
+  });
+
+  $ionicPlatform.on("resume", function(){
+      
+  });
+
+})
