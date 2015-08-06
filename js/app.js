@@ -39,7 +39,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
       	templateUrl: 'templates/splash.html',
   		  controller: 'SplashCtrl',
         onEnter: function($state, Auth){
-          if(!Auth.isLoggedIn()){
+          if(Auth.isLoggedIn()){
              $state.go('dashboard');
           }
         }
@@ -50,7 +50,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
       	templateUrl: 'templates/signup.html',
   		controller: 'SignupCtrl',
       onEnter: function($state, Auth){
-          if(!Auth.isLoggedIn()){
+          if(Auth.isLoggedIn()){
              $state.go('dashboard');
           }
         }
@@ -61,7 +61,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
       	templateUrl: 'templates/verify.html',
   		controller: 'VerifyController',
       onEnter: function($state, Auth){
-          if(!Auth.isLoggedIn()){
+          if(Auth.isLoggedIn()){
              $state.go('dashboard');
           }
         }
