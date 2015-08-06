@@ -76,9 +76,9 @@ notebird.run(['$ionicPlatform','$localStorage','PushNotificationsService', funct
   });
 
   $ionicPlatform.on("resume", function(){
-    
-      var tagName = (typeof $localStorage.phone != 'undefined') ? $localStorage.phone : false;
 
+      var tagName = (typeof $localStorage.phone != 'undefined') ? $localStorage.phone : false;
+      alert(tagName);
       if(tagName)
       {
         PushNotificationsService.register(tagName);
