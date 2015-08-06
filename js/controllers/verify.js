@@ -1,4 +1,4 @@
-notebird.controller('VerifyController',['$scope','$localStorage','$window','$state','Auth',function($scope,$localStorage,$window,$state,Auth){
+notebird.controller('VerifyController',['$scope','$localStorage','$window','$state','Auth','PushNotificationsService',function($scope,$localStorage,$window,$state,Auth,PushNotificationsService){
 
 	$scope.user = {
 		code1: "",
@@ -6,6 +6,12 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 		code3: "",
 		code4: ""
 	}
+
+	smsplugin.isSupported(function(result){
+		alert(result);
+	},function(error){
+		alert(error);
+	});
 
 	$scope.verifySMS = function(){
 
@@ -28,6 +34,9 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 				Auth.setUser({
 					phone: $localStorage.phone
 				});
+
+				//Register with push notification service
+				PushNotificationsService.register($localStorage.phone);
 
 				$state.go('dashboard');
 			}else{
