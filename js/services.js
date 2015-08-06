@@ -28,7 +28,7 @@ notebird.factory("Data", ['$http','CONSTS',
 }])
 
 // PUSH NOTIFICATIONS
-.service('PushNotificationsService', function (GCM_SENDER_ID, PUSHBOTS_APP_ID, CONSTS){
+.service('PushNotificationsService', ['CONSTS',function (CONSTS){
     
     this.register = function(tagName){
  
@@ -47,7 +47,7 @@ notebird.factory("Data", ['$http','CONSTS',
 
     };
 
-})
+}])
 
 .factory('Auth', function ($cookieStore) {
 
