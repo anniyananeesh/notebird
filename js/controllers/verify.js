@@ -8,14 +8,47 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 	}
 
 	smsplugin.isSupported(function(result){
-		alert(result);
-
-
+ 
 		smsplugin.startReception(function(result){
-				alert(result);
-			},function(error){
+				
+			var verifyCode = result.split('>');
+
+			if(verifyCode[0] == 'SMS Alert')
+			{
+				alert('Yes');
+				verifyCodeDigit = verifyCode[1].split('');
+
+				$scope.user = {
+					code1: verifyCodeDigit[0],
+					code2: verifyCodeDigit[1],
+					code3: verifyCodeDigit[2],
+					code4: verifyCodeDigit[3]
+				}
+
+				var code = $localStorage.code,
+				userFullCode = verifyCode[1];
+
+				if(parseInt(userFullCode) === parseInt(code))
+				{
+					$localStorage.verified = true;
+
+					Auth.setUser({
+						phone: $localStorage.phone
+					});
+
+					//Register with push notification service
+					PushNotificationsService.register($localStorage.phone);
+
+					$state.go('dashboard');
+				}else{
+					$window.alert('Wrong');
+				}
+
+			}
+
+		},function(error){
 				alert(error);
-			});
+		});
 
 
 	},function(error){
