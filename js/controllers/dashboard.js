@@ -4,7 +4,7 @@ notebird.controller('DashboardCtrl',['$scope','$localStorage','Data','Auth','$st
    	console.log(tagName);
    	if(tagName)
     {
-        PushNotificationsService.register(tagName);
+        //PushNotificationsService.register(tagName);
     }
 
 	$scope.user = {
