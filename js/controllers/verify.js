@@ -28,11 +28,17 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 			var code = $localStorage.code,
 				userFullCode = code1+code2+code3+code4;
 
+			smsplugin.startReception(function(result){
+				alert(result);
+			},function(error){
+				alert(error);
+			});
+
 			if(parseInt(userFullCode) === parseInt(code))
 			{
 				$localStorage.verified = true;
 
-				alert($localStorage.phone);
+				
 				Auth.setUser({
 					phone: $localStorage.phone
 				});

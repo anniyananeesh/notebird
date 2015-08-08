@@ -1,0 +1,18 @@
+<ion-header-bar align-title="center" class="bar-signup">
+ 
+  <h1 class="title">Notifications</h1>
+ 
+</ion-header-bar>
+
+<ion-content>
+ 
+  <div class="list category">
+
+    <a class="item" ng-repeat="note in notifications"> 
+      <h2>{{note.title}}</h2>
+      <p>{{note.message}}</p>
+    </a> 
+
+</div>
+ 
+</ion-content>

@@ -80,9 +80,13 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
         url: '/category',
         templateUrl: 'templates/category.html',
         controller: 'CategoryCtrl'
+  })
+  .state('notifications', {
+        url: '/notifications',
+        templateUrl: 'templates/notifications.html',
+        controller: 'NotificationCtrl'
   });
- 
 
-    $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 
 }]);
