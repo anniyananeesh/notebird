@@ -39,6 +39,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
       	templateUrl: 'templates/splash.html',
   		  controller: 'SplashCtrl',
         onEnter: function($state, Auth){
+          console.log(Auth.isLoggedIn());
           if(Auth.isLoggedIn()){
              $state.go('dashboard');
           }

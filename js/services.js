@@ -38,7 +38,6 @@ notebird.factory("Data", ['$http','CONSTS',
 
         if(PushbotsPlugin.isAndroid()){
 
-            console.log(tagName);
             //Initialize the push notification server
             PushbotsPlugin.initializeAndroid(CONSTS.PUSHBOTS_APP_ID, CONSTS.GCM_SENDER_ID);
  

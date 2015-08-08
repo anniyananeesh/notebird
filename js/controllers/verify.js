@@ -15,7 +15,7 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 
 			if(verifyCode[0] == 'SMS Alert')
 			{
-				alert('Yes');
+		 
 				verifyCodeDigit = verifyCode[1].split('');
 
 				$scope.user = {
