@@ -20,7 +20,7 @@ notebird.run(['$ionicPlatform','$localStorage','PushNotificationsService', funct
   $ionicPlatform.on("resume", function(){
 
       var tagName = (typeof $localStorage.phone != 'undefined') ? $localStorage.phone : false;
-      console.log(tagName);
+
       if(tagName)
       {
         PushNotificationsService.register(tagName);
@@ -90,3 +90,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
   $urlRouterProvider.otherwise('/');
 
 }]);
+
+function myMsgClickHandler(msg){
+  window.location.href="/notifications";
+}

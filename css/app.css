@@ -294,6 +294,7 @@ body{
 	color: #fff;
 	font-size: 16px;
 	border:none;
+	position: relative;
 }
 
 fieldset{
