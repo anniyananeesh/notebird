@@ -7,11 +7,6 @@ angular.module('ngCordova.plugins', [
    'spinnerDialog'
 ]);
 
-//#### Begin Individual Plugin Code ####
-
-// install   :       cordova plugin add https://github.com/Paldom/SpinnerDialog.git
-// link      :       https://github.com/Paldom/SpinnerDialog
-
 angular.module('ngCordova.plugins.spinnerDialog', [])
 
   .factory('$cordovaSpinnerDialog', ['$window', function ($window) {

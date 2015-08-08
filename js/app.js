@@ -1,6 +1,6 @@
 'use strict';
 
-var notebird = angular.module('notebird',['ionic', 'ngAnimate','ngStorage','ng.group','ngCookies','ngCordova']); //'ngCordova'
+var notebird = angular.module('notebird',['ionic', 'ngAnimate','ngStorage','ng.group','ngCookies']); //'ngCordova'
 
 notebird.run(['$ionicPlatform','$localStorage','PushNotificationsService', function($ionicPlatform,$localStorage,PushNotificationsService) {
   

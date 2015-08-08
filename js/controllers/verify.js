@@ -1,4 +1,4 @@
-notebird.controller('VerifyController',['$scope','$localStorage','$window','$state','Auth','PushNotificationsService','$cordovaSpinnerDialog',function($scope,$localStorage,$window,$state,Auth,PushNotificationsService,$cordovaSpinnerDialog){
+notebird.controller('VerifyController',['$scope','$localStorage','$window','$state','Auth','PushNotificationsService',function($scope,$localStorage,$window,$state,Auth,PushNotificationsService){
 
 	$scope.user = {
 		code1: "",
@@ -8,8 +8,8 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 	}
 
 	smsplugin.isSupported(function(result){
- 		
- 		$cordovaSpinnerDialog.show("Checking SMS Verification ....","", true);
+ 
+ 		window.plugins.spinnerDialog.show("Checking SMS Verification","", true);
 
 		smsplugin.startReception(function(result){
 				
@@ -41,7 +41,7 @@ notebird.controller('VerifyController',['$scope','$localStorage','$window','$sta
 					//Register with push notification service
 					PushNotificationsService.register($localStorage.phone);
 
-					$cordovaSpinnerDialog.hide();
+					window.plugins.spinnerDialog.hide();
 					$state.go('app.dashboard');
 				}else{
 					$window.alert('Wrong');
