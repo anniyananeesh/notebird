@@ -61,7 +61,7 @@ notebird.controller('SubscriberCtrl',['$scope','$stateParams','Data','Auth','$lo
 
 	$scope.showCategories = function()
 	{
-		$state.go('category');
+		$state.go('app.category');
 	};
 
 }]);

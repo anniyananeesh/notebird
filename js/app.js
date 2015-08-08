@@ -1,6 +1,6 @@
 'use strict';
 
-var notebird = angular.module('notebird',['ionic','ngAnimate','ngStorage','ng.group','ngCookies']);
+var notebird = angular.module('notebird',['ionic', 'ngAnimate','ngStorage','ng.group','ngCookies','ngCordova']); //'ngCordova'
 
 notebird.run(['$ionicPlatform','$localStorage','PushNotificationsService', function($ionicPlatform,$localStorage,PushNotificationsService) {
   
@@ -41,7 +41,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
         onEnter: function($state, $localStorage){
 
           if($localStorage.verified){
-             $state.go('dashboard');
+             $state.go('app.dashboard');
           }
         }
 	})
@@ -52,7 +52,7 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
   		controller: 'SignupCtrl',
       onEnter: function($state, $localStorage){
           if($localStorage.verified){
-             $state.go('dashboard');
+             $state.go('app.dashboard');
           }
         }
 	})
@@ -63,29 +63,59 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
   		controller: 'VerifyController',
       onEnter: function($state, $localStorage){
           if($localStorage.verified){
-             $state.go('dashboard');
+             $state.go('app.dashboard');
           }
         }
 	})
-  .state('subscribers', {
-        url: '/subscribers/:catId',
-        templateUrl: 'templates/subscribers.html',
-      controller: 'SubscriberCtrl'
+
+  .state('app', {
+    url: "/app",
+    abstract: true,
+    templateUrl: "templates/menu.html",
+    controller: 'DashboardCtrl'
   })
-  .state('dashboard', {
-        url: '/dashboard',
-        templateUrl: 'templates/dashboard.html',
-      controller: 'DashboardCtrl'
+ 
+
+  //subscribers
+  .state('app.subscribers', {
+      url: "/subscribers/:catId",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/subscribers.html",
+          controller: 'SubscriberCtrl'
+        }
+      }
   })
-  .state('category', {
-        url: '/category',
-        templateUrl: 'templates/category.html',
-        controller: 'CategoryCtrl'
+ 
+  //Dashboard
+  .state('app.dashboard', {
+      url: "/dashboard",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/dashboard.html",
+          controller: 'DashboardCtrl'
+        }
+      }
   })
-  .state('notifications', {
-        url: '/notifications',
-        templateUrl: 'templates/notifications.html',
-        controller: 'NotificationCtrl'
+
+  .state('app.category', {
+      url: "/category",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/category.html",
+          controller: 'CategoryCtrl'
+        }
+      }
+  })
+ 
+  .state('app.notifications', {
+      url: "/notifications",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/notifications.html",
+          controller: 'NotificationCtrl'
+        }
+      }
   });
 
   $urlRouterProvider.otherwise('/');

@@ -1,17 +1,12 @@
 notebird.controller('DashboardCtrl',['$scope','$localStorage','Data','Auth','$state','PushNotificationsService',function($scope,$localStorage,Data,Auth,$state,PushNotificationsService){
 
     var tagName = (typeof $localStorage.phone != 'undefined') ? $localStorage.phone : false;
-   	console.log(tagName);
-   	if(tagName)
-    {
-        //PushNotificationsService.register(tagName);
-    }
 
 	$scope.user = {
 		search: ''
 	}
 	
-    $localStorage.phone = '971525723556'; // remove this line after development
+    //$localStorage.phone = '971525723556'; // remove this line after development
 
     var favourites = [];
 
@@ -86,7 +81,7 @@ notebird.controller('DashboardCtrl',['$scope','$localStorage','Data','Auth','$st
 
 	$scope.showCategories = function()
 	{
-		$state.go('category');
+		$state.go('app.category');
 	};
 
 }]);

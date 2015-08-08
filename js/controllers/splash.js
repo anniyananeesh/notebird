@@ -6,9 +6,9 @@ notebird.controller('SplashCtrl',['$scope','$state','$localStorage','Auth',funct
         phone: null
     });
 
-    if(Auth.isLoggedIn() && (typeof $localStorage.verified != 'undefined' && $localStorage.verified))
+    if((typeof $localStorage.verified != 'undefined' && $localStorage.verified))
     {
-    	$state.go('dashboard');
+    	$state.go('app.dashboard');
     }
 
 	$scope.signUp = function()
