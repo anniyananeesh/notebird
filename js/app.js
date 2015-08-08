@@ -38,9 +38,9 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
       	url: '/',
       	templateUrl: 'templates/splash.html',
   		  controller: 'SplashCtrl',
-        onEnter: function($state, Auth){
-          console.log(Auth.isLoggedIn());
-          if(Auth.isLoggedIn()){
+        onEnter: function($state, $localStorage){
+
+          if($localStorage.verified){
              $state.go('dashboard');
           }
         }
@@ -50,8 +50,8 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
       	url: '/signup',
       	templateUrl: 'templates/signup.html',
   		controller: 'SignupCtrl',
-      onEnter: function($state, Auth){
-          if(Auth.isLoggedIn()){
+      onEnter: function($state, $localStorage){
+          if($localStorage.verified){
              $state.go('dashboard');
           }
         }
@@ -61,8 +61,8 @@ notebird.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',  func
       	url: '/verify',
       	templateUrl: 'templates/verify.html',
   		controller: 'VerifyController',
-      onEnter: function($state, Auth){
-          if(Auth.isLoggedIn()){
+      onEnter: function($state, $localStorage){
+          if($localStorage.verified){
              $state.go('dashboard');
           }
         }
